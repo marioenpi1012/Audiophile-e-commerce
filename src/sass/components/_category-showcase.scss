@@ -1,0 +1,129 @@
+@use "../abstracts/" as *;
+
+.CategoryShowcase {
+	--_padding-left: 1.5rem;
+	@include mq("xlg") {
+		--flow-spacer: 3rem;
+		--_padding-left: 5.9375rem;
+	}
+	.bg-image {
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		&--card-product {
+			background-position: center -8.125rem;
+			@include mq("xlg") {
+				background-position: -15rem -9.125rem;
+			}
+		}
+	}
+	.card-list {
+		--flow-spacer: 1.5rem;
+		@include mq("md") {
+			--flow-spacer: 2rem;
+		}
+		@include mq("lg") {
+			--flow-spacer: 3rem;
+		}
+	}
+	.card {
+		position: relative;
+		border-radius: 8px;
+		overflow: hidden;
+		max-width: 68.4375rem;
+		margin-inline: auto;
+		&__heading {
+			font-size: $fs-600;
+			line-height: 38px;
+			letter-spacing: 2px;
+		}
+	}
+
+	.product {
+		--flow-spacer: 1.5rem;
+		gap: 2rem;
+		padding-top: 57px;
+		padding-bottom: 55px;
+		margin: 0;
+		@include mq("md") {
+			gap: 4rem;
+			padding-top: 52px;
+			padding-bottom: 4rem;
+		}
+		@include mq("xlg") {
+			flex-direction: row;
+			align-items: flex-start;
+			gap: 8.6425rem;
+			padding-bottom: 0;
+			margin-bottom: -0.55rem;
+			padding-inline: 7.3125rem 5.9375rem;
+		}
+		&__image {
+			width: 172.25px;
+			margin-inline: auto;
+			@include mq("xlg") {
+				width: 410.23px;
+			}
+		}
+		&__content {
+			@include mq("lg") {
+				max-width: 40ch;
+			}
+			@include mq("xlg") {
+				text-align: start;
+				margin-top: 4rem;
+			}
+			h2 {
+				@include fs-primary-heading;
+				max-width: 10ch;
+				text-align: center;
+				margin: auto;
+				@include mq("xlg") {
+					margin: 0;
+					text-align: start;
+				}
+			}
+			a {
+				@include mq("md") {
+					margin-top: 2.5rem;
+				}
+			}
+		}
+	}
+	.card.even-columns {
+		gap: 1.5rem;
+		& > * {
+			border-radius: 8px;
+			overflow: hidden;
+		}
+		@include mq("md") {
+			gap: 0.6875rem;
+		}
+		@include mq("xlg") {
+			gap: 1.875rem;
+		}
+	}
+	.content {
+		position: relative;
+		flex-direction: column;
+		gap: 2rem;
+		align-items: self-start;
+		padding-left: var(--_padding-left);
+		padding-block: 41px;
+		@include mq("md") {
+			padding-block: 101px;
+		}
+		&--absolute {
+			position: absolute;
+			bottom: 101px;
+			left: var(--_padding-left);
+			z-index: 10;
+			@include mq("md") {
+				left: 4rem;
+			}
+			@include mq("xlg") {
+				left: var(--_padding-left);
+			}
+		}
+	}
+}

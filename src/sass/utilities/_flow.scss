@@ -1,0 +1,36 @@
+@use "../abstracts" as *;
+
+.flow > * + * {
+	margin-top: var(--flow-spacer, 0.75em);
+}
+
+// mobile all 96
+.space-y-24 > * + * {
+	margin-bottom: 6rem;
+}
+.space-x-4 > * + * {
+	margin-left: 1rem;
+}
+.space-x-nav > * + * {
+	margin-top: 1rem;
+	@include mq("md") {
+		margin-top: 0;
+		margin-left: 2.125rem;
+	}
+}
+// .space-y-products > * + * {
+// 	margin-top: 7.5rem;
+// 	@include mq("xlg") {
+// 		margin-top: 10rem;
+// 	}
+// }
+
+.Home {
+	&.flow > :is(.Hero) {
+		margin-top: 0;
+	}
+}
+// 200 - 200
+// 200 - 200
+// 168 - 168
+// 120 - 120

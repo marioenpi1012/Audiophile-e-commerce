@@ -1,0 +1,49 @@
+@use "../abstracts" as *;
+
+.second-nav {
+	padding-left: 0;
+	max-width: 69.375rem;
+	margin-inline: auto;
+	// margin-bottom: 7.5rem;
+
+	@include mq("md") {
+		&.even-columns {
+			gap: 0.625rem;
+		}
+	}
+	@include mq("lg") {
+		// margin-bottom: 10.5rem;
+		&.even-columns {
+			gap: 1.875rem;
+		}
+	}
+}
+
+// .SecondNav {
+// 	@include section;
+// 	@include mq("md") {
+// 		margin-top: 8rem;
+// 	}
+// 	@include mq("lg") {
+// 		margin-bottom: 10rem;
+// 		margin-left: 2rem;
+// 		margin-right: 2rem;
+// 	}
+// 	&__container {
+// 		@include container;
+// 		display: grid;
+// 		max-width: 110rem;
+// 		gap: 4rem;
+// 		@include mq("md") {
+// 			grid-auto-flow: column;
+// 			gap: 0.5rem;
+// 		}
+// 		@include mq("lg") {
+// 			gap: 2.5rem;
+// 		}
+
+// 		li {
+// 			list-style: none;
+// 		}
+// 	}
+// }

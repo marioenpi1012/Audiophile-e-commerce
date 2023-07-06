@@ -1,0 +1,44 @@
+@use "../abstracts" as *;
+
+.Cta {
+	display: grid;
+	margin-bottom: 6rem;
+	@include mq("xlg") {
+		grid-template-areas: "container image";
+		grid-auto-flow: column;
+		grid-auto-columns: 1fr;
+		align-items: center;
+		margin-bottom: 7.5rem;
+		gap: 7.8125rem;
+	}
+	&__image {
+		border-radius: 10px;
+		width: 100%;
+	}
+	> picture {
+		@include mq("xlg") {
+			grid-area: image;
+		}
+	}
+	&-container {
+		@include mq("xlg") {
+			text-align: start;
+			grid-area: container;
+			&.extra-body-padding-inline {
+				padding-inline: 0;
+			}
+		}
+		&__title {
+			padding-top: 2.5rem;
+			padding-bottom: 2rem;
+			@include mq("md") {
+				font-size: $fs-800;
+				line-height: 44px;
+			}
+		}
+		p {
+			opacity: 0.5;
+			vertical-align: top;
+		}
+	}
+}

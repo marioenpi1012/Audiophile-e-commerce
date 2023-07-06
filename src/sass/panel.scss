@@ -1,0 +1,17 @@
+.Panel{
+    width: 80vw;
+    height: 80vw;
+    position: absolute;
+    background-color: gray;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin: 5rem 0;
+    form{
+        display: grid;
+        gap:2rem;
+        label{
+            display: flex;
+        }
+    }
+}

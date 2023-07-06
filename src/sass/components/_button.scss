@@ -1,0 +1,23 @@
+@use "../abstracts" as *;
+
+.Button {
+	text-decoration: none;
+	display: inline-flex;
+	gap: 1rem;
+	// max-width: 160px;
+	align-items: center;
+	// padding: 15px 32px;
+	border: none;
+	cursor: pointer;
+	@each $variant, $colors in $button-variants {
+		&--#{$variant} {
+			@include button-variant(#{$variant});
+		}
+	}
+	&--sm {
+		padding: 15px 24.5px;
+	}
+	&--md {
+		padding: 15px 30px;
+	}
+}

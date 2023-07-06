@@ -1,0 +1,47 @@
+@use "../abstracts/" as *;
+
+.wrapper {
+	width: 100%;
+	position: fixed;
+	top: 0;
+}
+.cart-modal {
+	--flow-spacer: 2rem;
+	@include mq("md") {
+		padding-left: 2.0625rem;
+		padding-right: 1.9375rem;
+	}
+	li {
+		list-style: none;
+	}
+	a {
+		margin-top: 1.5rem;
+	}
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		button {
+			padding: 0;
+		}
+	}
+	& > .grid {
+		gap: 1.5rem;
+	}
+	&__total {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&--empty {
+		display: grid;
+		align-items: center;
+		justify-items: center;
+		gap: 1rem;
+		padding-block: 1.5rem;
+		img {
+			width: 6rem;
+			height: 6rem;
+		}
+	}
+}

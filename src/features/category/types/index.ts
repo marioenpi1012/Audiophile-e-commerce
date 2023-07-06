@@ -1,0 +1,5 @@
+export enum CategoryTypes {
+	SPEAKERS = "SPEAKERS",
+	HEADPHONES = "HEADPHONES",
+	EARPHONES = "EARPHONES",
+}

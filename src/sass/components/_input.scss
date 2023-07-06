@@ -1,0 +1,31 @@
+@use "../abstracts" as *;
+
+.input-wrapper {
+	display: grid;
+	width: 100%;
+	@include flow(0.5625rem);
+	&__input {
+		font-size: $fs-300;
+		line-height: 19px;
+		letter-spacing: -0.25px;
+		padding: 0.85rem 1.5rem;
+		border-radius: 0.5rem;
+		outline: 2px solid transparent;
+		outline-offset: 2px;
+		border-width: 1px;
+		border-style: solid;
+		border-color: hsla(0, 0%, 81%, 1);
+		caret-color: $clr-accent-700;
+		&:is(:hover, :focus) {
+			z-index: 1;
+			border-color: $clr-accent-700;
+			box-shadow: 0 0 0 1px $clr-accent-700;
+		}
+		&::placeholder {
+			opacity: 0.4;
+		}
+		&[aria-invalid="true"] {
+			border-color: $clr-error;
+		}
+	}
+}

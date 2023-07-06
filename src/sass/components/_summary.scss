@@ -1,0 +1,24 @@
+@use "../abstracts/" as *;
+
+.summary {
+	@include flow(2rem);
+	&__products {
+		&-rows {
+			align-items: flex-start;
+		}
+	}
+	&__total {
+		@include flow(8px);
+	}
+	&__grandTotal {
+		margin-top: 1.5rem;
+		p:last-of-type {
+			color: $clr-accent-700;
+		}
+	}
+	button {
+		max-width: 100%;
+		justify-content: center;
+		margin-top: 2rem;
+	}
+}

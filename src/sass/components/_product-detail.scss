@@ -1,0 +1,85 @@
+@use "../abstracts" as *;
+
+.product-detail {
+	--flow-spacer: 5.5rem;
+	@include mq("md") {
+		--flow-spacer: 7.5rem;
+	}
+	@include mq("md") {
+		--flow-spacer: 10rem;
+	}
+
+	& > button {
+		margin-top: 1rem;
+		@include mq("md") {
+			margin-top: 2rem;
+		}
+		@include mq("lg") {
+			margin-top: 4.9375rem;
+		}
+	}
+
+	&__product {
+		&:first-of-type {
+			margin-top: 1.5rem;
+			@include mq("lg") {
+				margin-top: 3.5rem;
+			}
+		}
+		@include mq("md") {
+			flex-direction: row;
+			gap: 4.3125rem;
+			& > div:where(.extra-body-padding-inline) {
+				padding-inline: 0;
+				justify-items: start;
+				text-align: start;
+				max-width: 339px;
+				width: 100%;
+				@include mq("lg") {
+					max-width: 445.5px;
+				}
+			}
+		}
+		@include mq("lg") {
+			gap: 7.78125rem;
+		}
+	}
+
+	&__price {
+		margin-bottom: 1.9375rem;
+	}
+	.features {
+		display: grid;
+		@include mq("lg") {
+			grid-auto-flow: column;
+			grid-auto-columns: 2fr 1fr;
+			gap: 7.8125rem;
+		}
+		.grid {
+			gap: 2rem;
+			& > div > * + * {
+				margin-top: 1rem;
+			}
+		}
+		.even-columns {
+			gap: 1.5rem;
+			max-height: 225px;
+			@include mq("md") {
+				gap: 0;
+			}
+			@include mq("lg") {
+				grid-auto-flow: row;
+				margin-top: 0;
+				gap: 2rem;
+			}
+		}
+		&__list {
+			display: grid;
+			gap: 0.5rem;
+		}
+		&__item {
+			display: inline-flex;
+			gap: 1.5rem;
+		}
+	}
+}

@@ -1,0 +1,31 @@
+@use "../abstracts/" as *;
+
+.modal {
+	max-width: 100vw;
+	width: min(100% - 3rem, 377px);
+	border-radius: 10px;
+	top: 15%;
+	left: auto;
+	margin-inline: 1.5rem;
+	padding: 2rem 28px;
+	z-index: 100;
+	pointer-events: all;
+	border: none;
+	overflow: hidden;
+	&::backdrop {
+		background-color: $clr-primary-900;
+		opacity: 0.4;
+		mix-blend-mode: normal;
+	}
+	@include mq("md") {
+		margin-inline: 2.5rem;
+	}
+	@include mq("lg") {
+		margin-inline: 10.3125rem;
+	}
+	a {
+		max-width: 100%;
+		width: 100%;
+		justify-content: center;
+	}
+}

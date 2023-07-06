@@ -1,0 +1,150 @@
+@use "../abstracts" as *;
+:root {
+	--fs-primary-heading: 2.25rem;
+	--fs-secondary-heading: 1.75rem;
+	--fs-tertiary-heading: 1.5rem;
+	@include mq("md") {
+		--fs-primary-heading: 3.5rem;
+		--fs-secondary-heading: 2.5rem;
+		--fs-tertiary-heading: 2rem;
+	}
+}
+
+$fw-normal: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+
+body {
+	font-family: "Manrope", sans-serif;
+	font-weight: $fw-medium;
+}
+.text-error {
+	color: $clr-error;
+}
+.text-primary-900 {
+	color: $clr-primary-900;
+}
+.text-accent-700 {
+	color: $clr-accent-700;
+}
+.text-accent-400 {
+	color: $clr-accent-400;
+}
+.text-accent-300 {
+	color: $clr-accent-300;
+}
+.text-accent-100 {
+	color: $clr-accent-100;
+}
+
+.text-neutral-800 {
+	color: $clr-neutral-800;
+}
+.text-neutral-200 {
+	color: $clr-neutral-200;
+}
+.bg-primary-900 {
+	background-color: $clr-primary-900;
+}
+.bg-neutral-800 {
+	background-color: $clr-neutral-800;
+}
+.bg-neutral-200 {
+	background-color: $clr-neutral-200;
+}
+.bg-neutral-300 {
+	background-color: $clr-neutral-300;
+}
+.bg-accent-100 {
+	background-color: $clr-accent-100;
+}
+.bg-accent-400 {
+	background-color: $clr-accent-400;
+}
+.bg-accent-700 {
+	background-color: $clr-accent-700;
+}
+.fs-overline {
+	font-size: $fs-300;
+	letter-spacing: 10px;
+	line-height: 19px;
+}
+
+.fs-primary-heading {
+	@include fs-primary-heading;
+}
+.fs-secondary-heading {
+	font-size: var(--fs-secondary-heading);
+	line-height: 38px;
+	letter-spacing: 1px;
+	@include mq("md") {
+		line-height: 44px;
+		letter-spacing: 1.43px;
+	}
+}
+
+.fs-tertiary-heading {
+	font-size: var(--fs-tertiary-heading);
+	line-height: 36px;
+	letter-spacing: 0.86px;
+	@include mq("md") {
+		line-height: 32px;
+		letter-spacing: 1.14px;
+	}
+}
+.fs-body-content {
+	font-size: $fs-400;
+	line-height: 25px;
+}
+.fs-button {
+	font-size: $fs-200;
+	font-weight: $fw-bold;
+	line-height: 18px;
+	letter-spacing: 1px;
+}
+.fs-nav-link {
+	font-size: $fs-200;
+	line-height: 25px;
+	letter-spacing: 2px;
+	&:is(:hover, :focus) {
+		color: $clr-orange;
+	}
+}
+.fs-form-label {
+	font-size: $fs-100;
+	line-height: 16px;
+	letter-spacing: -0.21px;
+}
+.fw-bold {
+	font-weight: $fw-bold;
+}
+.fw-medium {
+	font-weight: $fw-medium;
+}
+.fw-normal {
+	font-weight: $fw-normal;
+}
+.uppercase {
+	text-transform: uppercase;
+}
+.capitalize {
+	text-transform: capitalize;
+}
+.text-center {
+	text-align: center;
+}
+.opacity-75 {
+	opacity: 0.75;
+}
+.opacity-50 {
+	opacity: 0.5;
+}
+.opacity-40 {
+	opacity: 0.4;
+}
+.fs-300 {
+	font-size: $fs-300;
+}
+.fs-600 {
+	font-size: $fs-600;
+}

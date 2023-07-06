@@ -1,0 +1,87 @@
+@use "breakpoints" as *;
+@use "colors" as *;
+@mixin section {
+	min-height: 32px;
+	margin-bottom: 5rem;
+	padding-top: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+}
+@mixin container {
+	position: relative;
+	width: 100%;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+	padding: 0 2rem;
+	@include mq("md") {
+		padding: 0 4rem;
+	}
+	@include mq("xlg") {
+		padding: 0 8rem;
+	}
+}
+@mixin fs-primary-heading {
+	font-size: var(--fs-primary-heading);
+	line-height: 40px;
+	letter-spacing: 1.29px;
+
+	@include mq("md") {
+		line-height: 58px;
+		letter-spacing: 2px;
+	}
+}
+
+@mixin mq($key) {
+	$size: map-get($breakpoints, $key);
+	@if ($size) {
+		@media only screen and (min-width: $size) {
+			@content;
+		}
+	} @else {
+		@error '`#{$key}` does not exist in the $breakpoints ';
+	}
+}
+
+@mixin flow($flow) {
+	& > * + * {
+		margin-top: $flow;
+	}
+}
+@mixin button-variant($variant) {
+	$variant-color: map-get(map-get($button-variants, $variant), color);
+	$variant-hover-color: map-get(
+		map-get($button-variants, $variant),
+		hover-color
+	);
+	@if $variant == "primary" {
+		color: $clr-neutral-200;
+	}
+	@if $variant == "secondary" {
+		color: $clr-primary-900;
+		border: 1px solid $clr-primary-900;
+		&:hover {
+			color: $clr-neutral-200;
+		}
+	}
+	@if $variant == "secondary-filled" {
+		color: $clr-neutral-200;
+	}
+	@if $variant == "text" or $variant == "link" {
+		color: $clr-primary-900;
+		&:hover {
+			color: $clr-accent-700;
+			opacity: 1;
+			> * {
+				opacity: 1;
+			}
+		}
+	}
+	@if $variant == "link" {
+		text-decoration: underline;
+	}
+	background-color: $variant-color;
+	&:hover {
+		background-color: $variant-hover-color;
+	}
+}

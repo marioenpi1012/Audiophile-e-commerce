@@ -1,0 +1,134 @@
+@use "../abstracts" as *;
+.nav {
+	--padding-x: 1.5rem;
+	--padding-y: 2rem;
+	--z-index: 90;
+	background-color: hsla(0, 0, 10, 100%);
+	padding-top: var(--padding-y);
+	z-index: 100;
+	&--fixed {
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+	}
+	.backdrop {
+		position: fixed;
+		inset: 0;
+		background-color: $clr-primary-900;
+		opacity: 0.4;
+		z-index: var(--z-index);
+		@include mq("lg") {
+			display: none;
+		}
+	}
+	&__logo,
+	.nav-cart {
+		z-index: calc(var(--z-index) * 1.1);
+	}
+	.nav-cart {
+		& > button {
+			position: relative;
+		}
+		&--items-count {
+			display: flex;
+			position: absolute;
+			align-items: center;
+			justify-content: center;
+			height: 1rem;
+			width: 1rem;
+			padding: 0.6rem;
+			top: -0.6rem;
+			left: 0.875rem;
+			border-radius: 100%;
+		}
+	}
+	&--mobile {
+		display: block;
+		position: absolute;
+		width: 100%;
+		top: var(--padding-y);
+		padding-block: 2rem 2.1875rem;
+		background-color: $clr-neutral-200;
+		z-index: calc(var(--z-index) * 1.1);
+		pointer-events: auto;
+		@include mq("md") {
+			top: 3rem;
+			padding-block: 3.5rem 4.1875rem;
+		}
+		@include mq("lg") {
+			display: none;
+		}
+	}
+	&__section {
+		display: grid;
+		position: relative;
+		grid-auto-flow: column;
+		gap: 2rem;
+		justify-items: center;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 119rem;
+		padding-bottom: var(--padding-y);
+		margin-inline: auto;
+		@include mq("lg") {
+			--padding-y: 2.1875rem;
+			padding-block: var(--padding-y);
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			max-width: 90rem;
+			height: 2px;
+			width: calc(100% + (var(--padding-x) * 2));
+			bottom: 0;
+			background-color: $clr-light-gray;
+			opacity: 0.3;
+			@include mq("md") {
+				width: 100%;
+			}
+		}
+	}
+	&__mobile-menu {
+		background-color: transparent;
+		border: none;
+		color: inherit;
+		@include mq("lg") {
+			display: none;
+		}
+	}
+	&__logo {
+		display: flex;
+		gap: 4.75rem;
+		@include mq("md") {
+			gap: 2.625rem;
+		}
+	}
+	.nav-container {
+		display: none;
+		li {
+			list-style: none;
+			a {
+				text-decoration: none;
+			}
+		}
+		@include mq("lg") {
+			display: block;
+			&__links {
+				display: flex;
+			}
+		}
+	}
+	&__category {
+		padding-block: 2rem;
+		margin-bottom: 4rem;
+		@include mq("md") {
+			padding-block: 6.5625rem 6.0625rem;
+			margin-bottom: 7.5rem;
+		}
+		@include mq("lg") {
+			padding-top: 8.4375rem;
+			margin-bottom: 10rem;
+		}
+	}
+}

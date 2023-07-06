@@ -1,0 +1,93 @@
+@use "../abstracts" as *;
+.x {
+	--bg-clr: $clr-almost-black;
+	box-shadow: 0 0 0 100vmax var(--bg-clr);
+}
+:root {
+	--_bg-clr: hsla(0, 0, 10, 100%);
+}
+.Hero {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 80vh;
+	height: 100%;
+	width: 100%;
+	margin-top: 0;
+	background-color: hsla(0, 0, 10, 100%);
+	@include mq("md") {
+	}
+	@include mq("lg") {
+		min-height: 55vh;
+		justify-content: start;
+	}
+
+	&__loadsection {
+		.loading,
+		.errored {
+			width: 100%;
+			height: 80vh;
+			justify-content: center;
+			background-color: hsla(0, 0, 10, 100%);
+		}
+	}
+	.container {
+		position: relative;
+		@include mq("md") {
+			padding-inline: 2.5rem;
+		}
+		@include mq("lg") {
+			position: relative;
+			max-width: 119rem;
+			width: 100%;
+			margin-inline: auto;
+			padding-right: 0;
+		}
+		@include mq("xlg") {
+			padding-left: 10.3125rem;
+		}
+	}
+	&__heading {
+		margin-top: 1rem;
+	}
+
+	.product {
+		margin-bottom: 0;
+	}
+	&__product {
+		@include mq("lg") {
+			align-items: flex-start;
+			text-align: left;
+			padding: 0;
+		}
+		& > :last-child {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-40%);
+			inset-inline: 1.5rem;
+			margin: auto;
+			width: min-content;
+			@include mq("lg") {
+				left: 0;
+				margin: 0;
+			}
+		}
+		span {
+			color: $clr-light-gray;
+			opacity: 0.5;
+		}
+		h2 {
+			@include fs-primary-heading;
+			color: $clr-white;
+			margin-top: 1rem;
+		}
+		p {
+			color: $clr-neutral-200;
+			opacity: 0.75;
+		}
+	}
+	&__button {
+		margin-top: 1.75rem;
+	}
+}

@@ -1,0 +1,21 @@
+@use "../abstracts/" as *;
+
+.Home {
+	--flow-spacer: 7.5rem;
+	& > :is([data-id="category-showcase"], [data-id="second-nav"]) {
+		@include mq("md") {
+			margin-top: 6rem;
+		}
+	}
+	& > :is([data-id="second-nav"]) {
+		margin-top: 2.5rem;
+		@include mq("lg") {
+			margin-top: var(--flow-spacer);
+		}
+	}
+	& > :is([data-id="category-showcase"]) {
+		@include mq("lg") {
+			margin-top: 10.5rem;
+		}
+	}
+}

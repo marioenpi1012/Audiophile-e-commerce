@@ -1,0 +1,56 @@
+@use "../abstracts/" as *;
+:root {
+	--checkout-form-padding-inline: 1.5rem;
+	@include mq("md") {
+		--checkout-form-padding-inline: 1.6875rem;
+	}
+	@include mq("lg") {
+		--checkout-form-padding-inline: 3rem;
+	}
+}
+.checkout {
+	--flow-spacer: 1.5rem;
+	padding-top: 1rem;
+	padding-bottom: 6.06rem;
+	@include mq("md") {
+		padding-top: 3rem;
+		padding-bottom: 7.5rem;
+	}
+	@include mq("lg") {
+		--flow-spacer: 2.375rem;
+		padding-top: 4.9375rem;
+		padding-bottom: 8.81rem;
+	}
+	& > .grid {
+		gap: 2rem;
+		@include mq("lg") {
+			grid-auto-flow: column;
+			gap: 1.875rem;
+		}
+	}
+	&__form,
+	&__summary {
+		padding-inline: var(--checkout-form-padding-inline);
+		border-radius: 8px;
+	}
+	&__form {
+		padding-top: 1.5rem;
+		padding-bottom: 1.9375rem;
+		@include mq("md") {
+			padding-top: 1.875rem;
+			padding-bottom: 1.1875rem;
+		}
+		@include mq("lg") {
+			padding-top: 3.4rem;
+			padding-bottom: 3rem;
+		}
+	}
+	&__summary {
+		height: fit-content;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+		@include mq("lg") {
+			padding-inline: 2.0625rem;
+		}
+	}
+}

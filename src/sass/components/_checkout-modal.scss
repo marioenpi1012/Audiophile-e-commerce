@@ -1,0 +1,72 @@
+@use "../abstracts/" as *;
+
+.checkout-modal {
+	--flow-spacer: 1.5rem;
+	padding-inline: 2rem;
+	@include mq("md") {
+		--flow-spacer: 2rem;
+		width: max-content;
+		padding-inline: 3rem;
+		margin: 0;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	&__title {
+		font-size: 1.5rem;
+		line-height: 28px;
+		letter-spacing: 0.86px;
+		@include mq("md") {
+			font-size: 2rem;
+			line-height: 36px;
+			letter-spacing: 1.14px;
+		}
+	}
+	&__confirmation-msg {
+		margin-top: 1rem;
+		@include mq("md") {
+			margin-top: 1.5rem;
+		}
+	}
+	a {
+		margin-top: 2.875rem;
+	}
+	.order-information {
+		border-radius: 8px;
+		gap: 0;
+		grid-auto-columns: auto;
+		& > .products-container {
+			padding: 1.5rem;
+		}
+		&__product {
+			gap: 0;
+		}
+		button {
+			padding-bottom: 0;
+		}
+		.line {
+			height: 1px;
+			background-color: $clr-neutral-800;
+			opacity: 0.08;
+		}
+		.grand-total {
+			flex-direction: column;
+			justify-content: center;
+			align-items: start;
+			gap: 0;
+			padding-left: 1.5rem;
+			padding-bottom: 1.1875rem;
+			@include mq("md") {
+				padding-right: 4.5625rem;
+				padding-block: 2.625rem;
+			}
+			@include mq("lg") {
+				padding-left: 2rem;
+				padding-right: 4.0625rem;
+			}
+			&--justify-end {
+				justify-content: flex-end;
+			}
+		}
+	}
+}

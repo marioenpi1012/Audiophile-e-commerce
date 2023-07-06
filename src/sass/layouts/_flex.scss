@@ -1,0 +1,18 @@
+.flex {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+.inline-flex {
+	display: inline-flex;
+	align-items: center;
+}
+.justify-between {
+	justify-content: space-between;
+}
+.item-start {
+	align-items: flex-start;
+}
+.flex-col {
+	flex-direction: column;
+}

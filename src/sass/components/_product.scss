@@ -1,0 +1,51 @@
+@use "../abstracts" as *;
+
+:root {
+	--flow-spacer: 1.5rem;
+}
+
+.product {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	gap: 2rem;
+	height: 100%;
+	@include mq("md") {
+		gap: 3.25rem;
+	}
+	@include mq("lg") {
+		flex-direction: row;
+		gap: 7.8125rem;
+		align-items: center;
+		&:where(:nth-child(even)) {
+			flex-direction: row-reverse;
+		}
+		.extra-body-padding-inline {
+			padding-inline: 0;
+		}
+	}
+	&__image {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+	&__content {
+		--flow-spacer: 1.5rem;
+		display: grid;
+		justify-items: center;
+		@include mq("lg") {
+			justify-items: start;
+			text-align: start;
+		}
+	}
+	&__title {
+		@include mq("md") {
+			margin-top: 1rem;
+		}
+	}
+	&__description {
+		@include mq("md") {
+			margin-top: 2rem;
+		}
+	}
+}

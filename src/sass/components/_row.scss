@@ -1,0 +1,22 @@
+@use "../abstracts" as *;
+
+.Row {
+	& > .flex {
+		align-items: self-start;
+		justify-content: space-between;
+		flex: 1;
+	}
+	picture {
+		width: 4rem;
+		height: 4rem;
+	}
+	&__content {
+		display: flex;
+		gap: 1rem;
+	}
+	&__buttons {
+		display: inline-flex;
+		align-items: center;
+		margin-left: auto;
+	}
+}

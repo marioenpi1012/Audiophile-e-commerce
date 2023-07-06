@@ -1,0 +1,29 @@
+@use "../abstracts" as *;
+
+.alternatives {
+	& > .even-columns {
+		gap: 3.5rem;
+		margin-top: 3.5rem;
+		@include mq("md") {
+			gap: 0.6875rem;
+			margin-top: 4rem;
+		}
+		@include mq("lg") {
+			gap: 1.875rem;
+		}
+	}
+	.card {
+		display: grid;
+		gap: 2rem;
+		@include mq("md") {
+			gap: 2.5rem;
+		}
+		&__content {
+			display: grid;
+			gap: 2rem;
+			justify-content: center;
+		}
+	}
+}
+// 40 32
+// 32 32

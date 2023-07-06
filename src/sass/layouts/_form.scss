@@ -1,0 +1,30 @@
+@use "../abstracts/" as *;
+
+.form {
+	@include flow(2rem);
+	@include mq("lg") {
+		@include flow(3.125rem);
+	}
+	fieldset {
+		border: none;
+		legend {
+			font-size: $fs-200;
+			line-height: 25px;
+			letter-spacing: 0.93px;
+		}
+	}
+	&__group {
+		display: grid;
+		& > label:first-of-type {
+			margin-top: 1rem;
+		}
+		@include flow(1.5rem);
+		@include mq("md") {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 1rem;
+		}
+		&--full-column {
+			grid-column: 1 / -1;
+		}
+	}
+}

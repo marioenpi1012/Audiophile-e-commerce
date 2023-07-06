@@ -1,0 +1,16 @@
+@use "../abstracts" as *;
+
+.body-padding-inline {
+	padding-inline: 1.5rem;
+	@include mq("md") {
+		padding-inline: 2.5rem;
+	}
+	@include mq("xlg") {
+		padding-inline: 10.3125rem;
+	}
+}
+.extra-body-padding-inline {
+	@include mq("md") {
+		padding-inline: 3.625rem;
+	}
+}

@@ -1,0 +1,14 @@
+@use "../abstracts" as *;
+
+.section {
+	position: relative;
+	padding-inline: 1.5rem;
+	margin-bottom: 7.5rem;
+	@include mq("md") {
+		padding-inline: 2.5rem;
+		margin-bottom: 6rem;
+	}
+	@include mq("lg") {
+		padding-inline: 10.3125rem;
+	}
+}

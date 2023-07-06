@@ -1,0 +1,15 @@
+@use "../abstracts" as *;
+
+.backgroundImage {
+	background: center / cover no-repeat;
+	background-blend-mode: color;
+	height: 100%;
+	width: 100%;
+	background-image: var(--mobile-img);
+	@include mq("md") {
+		background-image: var(--tablet-img);
+	}
+	@include mq("lg") {
+		background-image: var(--desktop-img);
+	}
+}
