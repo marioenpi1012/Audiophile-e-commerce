@@ -16,16 +16,14 @@ export const Product = ({
 	children,
 	className,
 }: ProductProps) => {
-	const serverUrl = process.env.REACT_APP_API_URL;
-
 	const { mobile, tablet, desktop } = image;
 
 	return (
 		<article className={cx("product text-center", className)}>
 			<Image
-				mobile={`${serverUrl}${mobile.data.attributes.url}`}
-				tablet={`${serverUrl}${tablet.data.attributes.url}`}
-				desktop={`${serverUrl}${desktop.data.attributes.url}`}
+				mobile={`${mobile.data.attributes.url}`}
+				tablet={`${tablet.data.attributes.url}`}
+				desktop={`${desktop.data.attributes.url}`}
 				alt=""
 			/>
 			<div className="product__content flow  extra-body-padding-inline">

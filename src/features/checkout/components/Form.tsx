@@ -24,8 +24,6 @@ const stripePromise = loadStripe(`${process.env.REACT_APP_STRIPE_PUBLIC_KEY}`);
 export const CheckoutForm: React.FC<FormProps> = ({ className }) => {
 	const { cartItems } = useContext(CartContext);
 
-	console.log(document.cookie);
-
 	const makePayment = async (data: Inputs) => {
 		const stripe = await stripePromise;
 		const requestBody = {

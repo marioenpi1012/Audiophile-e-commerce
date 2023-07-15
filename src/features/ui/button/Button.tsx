@@ -19,6 +19,7 @@ export const Button: React.FC<ButtonProps> = (
 		className,
 		children,
 		size = "md",
+		disabled,
 		...rest
 	} = props;
 
@@ -28,6 +29,7 @@ export const Button: React.FC<ButtonProps> = (
 				`Button fs-button uppercase Button--${variant} Button--${size}`,
 				className
 			)}
+			disabled={disabled}
 			{...rest}
 		>
 			{children}

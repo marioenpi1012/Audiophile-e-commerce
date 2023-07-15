@@ -14,7 +14,14 @@ interface AppProviderProps {
 
 const ErrorFallback = () => {
 	return (
-		<div>
+		<div
+			className="flex"
+			style={{
+				height: "100vh",
+				justifyContent: "center",
+				flexDirection: "column",
+			}}
+		>
 			<h1>Ooops, something went wrong. Please try again!</h1>
 			<Button onClick={() => window.location.assign(window.location.origin)}>
 				Refresh
