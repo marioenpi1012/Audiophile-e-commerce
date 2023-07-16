@@ -25,7 +25,7 @@ export const Row: React.FC<RowProps> = ({
 	return (
 		<article className={cx("Row flex", className)}>
 			<Image
-				mobile={`${API_URL}${cartImage.data.attributes.url}`}
+				mobile={cartImage.data.attributes.url}
 				className="Row__image"
 				alt=""
 			/>

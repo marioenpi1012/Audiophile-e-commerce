@@ -38,7 +38,7 @@ export const CheckoutForm: React.FC<FormProps> = ({ className }) => {
 		axios
 			.post("/api/orders", requestBody)
 			.then(async (response) => {
-				stripe?.redirectToCheckout({
+				await stripe?.redirectToCheckout({
 					sessionId: response.data.id,
 				});
 			})

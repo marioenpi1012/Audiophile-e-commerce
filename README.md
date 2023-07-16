@@ -19,6 +19,7 @@ Audiophile is a Fullstack Application builded with a simple, scalable, and power
 ## Author
 
 - Website - [Mario Pineda](https://www.pinedamario.com)
+- LinkedIn - [pineda-mario](https://www.linkedin.com/in/pineda-mario/)
 - Frontend Mentor - [@marioenpi1012](https://www.frontendmentor.io/profile/marioenpi1012)
 
 ## Learn More
