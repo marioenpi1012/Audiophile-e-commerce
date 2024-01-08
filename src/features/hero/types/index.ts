@@ -7,6 +7,7 @@ export type Hero = {
 		name: string;
 		new: boolean;
 		image: INestedImages;
+		slug: string;
 	};
 
 	id: number;

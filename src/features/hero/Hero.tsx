@@ -26,7 +26,7 @@ export const Hero = () => {
 							className="Hero__product"
 						>
 							<LinkButton
-								to="/headphones/xx99-mark-two-headphones"
+								to={`${data.attributes.category}/${data.attributes.slug}`}
 								className="Hero__button"
 							>
 								See Product

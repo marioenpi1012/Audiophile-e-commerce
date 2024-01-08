@@ -7,9 +7,7 @@ import { populateConfig } from "config";
 
 const getProductBySlug = (slug: string | undefined): Promise<IProduct> => {
 	return axios
-		.get<IProduct>(
-			`/api/product/find-by-slug/${slug}?populate=${populateConfig}`
-		)
+		.get<IProduct>(`/api/product/find-by-slug/${slug}?populate=deep`)
 		.then((response: AxiosResponse) => {
 			return response.data.data;
 		});

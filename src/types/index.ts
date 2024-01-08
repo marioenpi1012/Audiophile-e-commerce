@@ -74,7 +74,5 @@ export type Others = {
 	id: number;
 	name: string;
 	slug: string;
-	image: {
-		data: { attributes: { url: string } };
-	};
+	image: INestedImages;
 }[];
